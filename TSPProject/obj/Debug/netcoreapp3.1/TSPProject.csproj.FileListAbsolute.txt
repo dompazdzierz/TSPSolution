@@ -1,0 +1,26 @@
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.csprojAssemblyReference.cache
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.AssemblyInfoInputs.cache
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.AssemblyInfo.cs
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.exe
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.deps.json
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.runtimeconfig.json
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.runtimeconfig.dev.json
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.dll
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.pdb
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.dll
+G:\Studia\Semestr 6\Sztuczna inteligencja\[L]\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.pdb
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.exe
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.deps.json
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.runtimeconfig.json
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.runtimeconfig.dev.json
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.dll
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\TSPProject.pdb
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.AssemblyInfoInputs.cache
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.AssemblyInfo.cs
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.dll
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.pdb
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.genruntimeconfig.cache
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\bin\Debug\netcoreapp3.1\CsvHelper.dll
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.csproj.CoreCompileInputs.cache
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.csproj.CopyComplete
+C:\projekty\ZAD1\TSPSolution\TSPSolution\TSPProject\obj\Debug\netcoreapp3.1\TSPProject.csprojAssemblyReference.cache
