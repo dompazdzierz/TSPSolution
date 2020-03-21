@@ -184,6 +184,7 @@ namespace TSPProject
             for(int i = 0; i < 10; i++)
             {
                 recordsLists[i] = resolver.ResolveProblem();
+                Console.WriteLine(i + "___" + resolver.Name);
             }
 
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
