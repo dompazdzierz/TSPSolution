@@ -1,12 +1,7 @@
-﻿using CsvHelper;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Text;
 using TSPProject.Extensions;
-using TSPProject.Resolvers;
 
 namespace TSPProject
 {
@@ -30,7 +25,7 @@ namespace TSPProject
                 int iterationNumber,
                 bool isTournament,
                 double selectionParameter = 0
-            ) : base(adjacencyMatrix, "GA_ps" + populationSize + "_cp" + crossProb + "_mp" + mutProb + "_in" + iterationNumber + "_sp" + selectionParameter) 
+            ) : base(adjacencyMatrix, "GA_ps" + populationSize + "_cp" + crossProb + "_mp" + mutProb + "_in" + iterationNumber + "_sp" + selectionParameter + "_t" + isTournament) 
         {
             PopulationSize = populationSize;
             CrossProb = crossProb;
@@ -63,7 +58,6 @@ namespace TSPProject
 
                 records.Add(new Record(best, sum / PopulationSize, worst));
                 GAIteration();
-                Console.WriteLine(i);
             }
 
             return records;
@@ -74,7 +68,6 @@ namespace TSPProject
             Crossover();
             Mutation();
         }
-
 
         private List<Individual> GeneratePopulation()
         {
@@ -89,11 +82,11 @@ namespace TSPProject
             return population;
         }
 
-        private Individual TournamentSelection()
+        private Individual TournamentSelectionHelper()
         {
             var winner = Population[Rng.Next(0, PopulationSize)];
 
-            for (int j = 0; j < SelectionParameter; j++)
+            for (int j = 1; j < SelectionParameter; j++)
             {
                 var competitor = Population[Rng.Next(0, PopulationSize)];
                     
@@ -104,7 +97,19 @@ namespace TSPProject
             return winner;
         }
 
-        private Individual RouletteSelection()
+        private List<Individual> TournamentSelection()
+        {
+            var individuals = new List<Individual>();
+
+            for(int i = 0; i < PopulationSize  * 2 ; i++)
+            {
+                individuals.Add(TournamentSelectionHelper());
+            }
+
+            return individuals;
+        }
+
+        private List<Individual> RouletteSelection()
         {
             var fitnessList = new List<double>();
             var weightList = new List<double>();
@@ -129,44 +134,47 @@ namespace TSPProject
             for (int i = 0; i < PopulationSize; i++)
             {
                 var percentBetter = 100 * (maxFitness - fitnessList[i]) / maxFitness;
-                var weight = percentBetter * percentBetter / 10 + SelectionParameter;
+                var weight = Math.Pow(percentBetter, 5) / 10000 + SelectionParameter;
                 weightSum += weight;
                 weightList.Add(weightSum);
             }
 
-            var searchedProbability = Rng.NextDouble() * weightSum;
 
-            for(int i = 0; i < PopulationSize; i++)
+            List<Individual> individuals = new List<Individual>();
+
+            while (individuals.Count < PopulationSize * 2)
             {
-                if(searchedProbability <= weightList[i])
+                var searchedProbability = Rng.NextDouble() * weightSum;
+
+                for (int i = 0; i < PopulationSize; i++)
                 {
-                    return Population[i];
+                    if (searchedProbability <= weightList[i])
+                    {
+                        individuals.Add(Population[i]);
+                        break;
+                    }
                 }
             }
-
-            return Population[0];
+          
+            return individuals;
         }
 
         private void Crossover()
         {
             var newPopulation = new List<Individual>();
-            
-            while(newPopulation.Count < PopulationSize)
+            List<Individual> parents;
+
+            if (IsTournament)
+                parents = TournamentSelection();
+            else
+                parents = RouletteSelection();
+
+            int parentIndex = 0;
+
+            while (newPopulation.Count < PopulationSize)
             {
-                Individual oneParent;
-                Individual otherParent;
-
-                if(IsTournament)
-                {
-                    oneParent = TournamentSelection();
-                    otherParent = TournamentSelection();
-                }
-                else
-                {
-                    oneParent = RouletteSelection();
-                    otherParent = RouletteSelection();
-                }
-
+                Individual oneParent = parents[parentIndex];
+                Individual otherParent = parents[parentIndex + 1];
 
                 if (Rng.NextDouble() < CrossProb)
                 {
@@ -204,6 +212,7 @@ namespace TSPProject
                     newPopulation.Add(otherParent);
                 }
 
+                parentIndex = parentIndex + 2;
             }
 
             if (newPopulation.Count > PopulationSize)

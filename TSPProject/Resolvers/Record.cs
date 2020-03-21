@@ -8,6 +8,7 @@
             Avg = avg;
             Worst = worst;
         }
+
         public double Best { get; set; }
         public double Avg { get; set; }
         public double Worst { get; set; }
